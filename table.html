@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+
+
+            position: absolute;
+            bottom: 100px;
+            right: 1px;
+            font-size: 13px;
+
+        }
+
+        td,
+        th {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .date {
+            border: 1px solid #000000;
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        .container {
+
+            text-align: center;
+            width: 300px;
+            height: 150px;
+            top: 50px;
+        }
+
+        .button1 {
+            position: absolute;
+            bottom: 95px;
+            left: 16px;
+            width: 120px;
+            height: 70px;
+            font-size: 13px;
+            background-color: #eb0202;
+
+        }
+
+        .button3 {
+            position: absolute;
+            bottom: 300px;
+            left: 16px;
+            width: 120px;
+            height: 70px;
+            font-size: 13px;
+            background-color: #c9ff05;
+
+        }
+
+        .button2 {
+            background-color: #08fff3;
+            position: absolute;
+            bottom: 200px;
+            left: 16px;
+            width: 120px;
+            height: 70px;
+            font-size: 13px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="rusa.jpg" style="width:128px;height:128px;    
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border: 5px;">
+    <div class="date">
+        <p id="demo"></p>
+
+        <script>
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d;
+
+        </script>
+    </div>
+    <div class="container">
+        <a href="index.html" class="button2"> EXPORT</a>
+        <a href="graph.html" class="button3"> GRAPH</a>
+        <a href="index.html" class="button1"> LOG OUT</a>
+    </div>
+
+
+
+
+    <div align="right">
+
+        <table border="1">
+            <tr>
+                <th>No</th>
+                <th>on</th>
+                <th>off</th>
+                <th>Ack by</th>
+                <th>Reason</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>Act :Audyatra</td>
+                <td>1. interlock Hose Reel Front</td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>2. interlock Hose Reel Rear</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>3. interlock Hose Reel Stow</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>4. interlock Hose Reel Boom Stow</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>9. interlock Hose Reel Front</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>10. interlock Hose Reel Near</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>15. interlock Hose Reel Fault</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>kamis,25/02/2021,19:41:50</td>
+                <td>minggu,25/02/2021</td>
+                <td>-</td>
+                <td>16. Breakdown</td>
+            </tr>
+        </table>
+
+
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>

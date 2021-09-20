@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .date {
+            border: 1px solid #000000;
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+    </style>
+    <h1>Trend of reason </h1>
+
+
+</head>
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body>
+
+    <img src="rusa.jpg" style="width:128px;height:128px;    
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border: 5px;">
+    <div class="date">
+        <p id="demo"></p>
+
+        <script>
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d;
+
+        </script>
+    </div>
+
+    <canvas id="myChart" style="width:20px;max-width:2000px;height: 7px;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;"></canvas>
+
+    <script>
+        var xValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
+        var yValues = [2, 3, 4, 1, 2, 5, 6, 7, 1, 1, 1, 2, 3, 2, 1, 9];
+        var barColors = "blue";
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                }
+            }
+        });
+    </script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+
+</html>
