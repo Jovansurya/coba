@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Jumlah maba</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            padding: 8vh 10vw;
+
+        }
+
+        .container-content {
+            border: 1px solid black;
+            padding: 25px;
+        }
+
+        .home {
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 576px) {
+            body {
+                padding: 5vh 5vw;
+            }
+
+            .container-content {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="date">
+        <p id="demo"></p>
+
+        <script>
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d;
+
+        </script>
+    </div>
+
+    <div class="container-content">
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Initialization data from DB
+        var requestOptions = {
+            method: "GET",
+            redirect: "follow",
+        };
+        fetch("graph.php", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result)
+                let jumlah = [];
+                result.data.forEach((element) => {
+                    jumlah.push(element["jumlah"]);
+                });
+                let tahun = [];
+                result.data.forEach((element) => {
+                    tahun.push(element["tahun"]);
+                });
+
+                // Setup
+                const labels = tahun;
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Jumlah maba',
+                        data: jumlah,
+                        backgroundColor: [
+                            'blue'
+                        ],
+                        borderColor: [
+                            'black'
+                        ],
+                        borderWidth: 2
+                    }]
+                };
+
+                // Config
+                const config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    },
+                };
+
+                // Render / show the chart
+                var myChart = new Chart(document.getElementById("myChart"), config);
+            })
+            .catch((error) => console.log("error", error));
+    </script>
+
+    <div class="home">
+        <a class="waves-effect waves-light btn blue darken-2" href="index.html">Back to Table</a>
+    </div>
+
+</body>
+
+</html>
