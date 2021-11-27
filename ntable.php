@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -34,3 +35,18 @@
 </body>
 
 </html>
+=======
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = mysqli_connect("localhost", "root", "", "pweb");
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+>>>>>>> 09bdf35934404a20c2b0b53f6f238a7abc2fe6af
